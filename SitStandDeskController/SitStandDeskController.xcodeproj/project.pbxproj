@@ -1,0 +1,386 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		EA079E752BC442A000C2C9C4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA079E742BC442A000C2C9C4 /* AppDelegate.swift */; };
+		EA079E772BC442A000C2C9C4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA079E762BC442A000C2C9C4 /* ViewController.swift */; };
+		EA079E792BC442A300C2C9C4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA079E782BC442A300C2C9C4 /* Assets.xcassets */; };
+		EA079E7C2BC442A300C2C9C4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = EA079E7A2BC442A300C2C9C4 /* Main.storyboard */; };
+		EA079E842BC445DA00C2C9C4 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = EA079E832BC445DA00C2C9C4 /* Info.plist */; };
+		EA079E862BC487E200C2C9C4 /* PopMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA079E852BC487E200C2C9C4 /* PopMenuViewController.swift */; };
+		EA079E882BC497BA00C2C9C4 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA079E872BC497B900C2C9C4 /* BluetoothManager.swift */; };
+		EA8A2B102C13AA0B00DAA472 /* SendingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA8A2B0F2C13AA0B00DAA472 /* SendingData.swift */; };
+		EAF79ED42BFBE6B400DB3F26 /* CoreBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF79ED32BFBE6B400DB3F26 /* CoreBluetooth.framework */; };
+		EAF79ED62BFBE81000DB3F26 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EAF79ED52BFBE81000DB3F26 /* IOBluetooth.framework */; };
+		EAF79ED82BFBE82C00DB3F26 /* IOBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAF79ED72BFBE82B00DB3F26 /* IOBluetooth.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		EA079E712BC442A000C2C9C4 /* SitStandDeskController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SitStandDeskController.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA079E742BC442A000C2C9C4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		EA079E762BC442A000C2C9C4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		EA079E782BC442A300C2C9C4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		EA079E7B2BC442A300C2C9C4 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		EA079E7D2BC442A300C2C9C4 /* SitStandDeskController.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SitStandDeskController.entitlements; sourceTree = "<group>"; };
+		EA079E832BC445DA00C2C9C4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA079E852BC487E200C2C9C4 /* PopMenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopMenuViewController.swift; sourceTree = "<group>"; };
+		EA079E872BC497B900C2C9C4 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		EA8A2B0F2C13AA0B00DAA472 /* SendingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendingData.swift; sourceTree = "<group>"; };
+		EAF79ED32BFBE6B400DB3F26 /* CoreBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreBluetooth.framework; path = System/Library/Frameworks/CoreBluetooth.framework; sourceTree = SDKROOT; };
+		EAF79ED52BFBE81000DB3F26 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = System/Library/Frameworks/IOBluetooth.framework; sourceTree = SDKROOT; };
+		EAF79ED72BFBE82B00DB3F26 /* IOBluetooth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IOBluetooth.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		EA079E6E2BC442A000C2C9C4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAF79ED62BFBE81000DB3F26 /* IOBluetooth.framework in Frameworks */,
+				EAF79ED42BFBE6B400DB3F26 /* CoreBluetooth.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		EA079E682BC442A000C2C9C4 = {
+			isa = PBXGroup;
+			children = (
+				EA079E732BC442A000C2C9C4 /* SitStandDeskController */,
+				EA079E722BC442A000C2C9C4 /* Products */,
+				EAF79ED22BFBE6B400DB3F26 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		EA079E722BC442A000C2C9C4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				EA079E712BC442A000C2C9C4 /* SitStandDeskController.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		EA079E732BC442A000C2C9C4 /* SitStandDeskController */ = {
+			isa = PBXGroup;
+			children = (
+				EA079E742BC442A000C2C9C4 /* AppDelegate.swift */,
+				EA079E762BC442A000C2C9C4 /* ViewController.swift */,
+				EA079E782BC442A300C2C9C4 /* Assets.xcassets */,
+				EA079E7A2BC442A300C2C9C4 /* Main.storyboard */,
+				EA079E7D2BC442A300C2C9C4 /* SitStandDeskController.entitlements */,
+				EA079E832BC445DA00C2C9C4 /* Info.plist */,
+				EA079E852BC487E200C2C9C4 /* PopMenuViewController.swift */,
+				EA079E872BC497B900C2C9C4 /* BluetoothManager.swift */,
+				EAF79ED72BFBE82B00DB3F26 /* IOBluetooth.swift */,
+				EA8A2B0F2C13AA0B00DAA472 /* SendingData.swift */,
+			);
+			path = SitStandDeskController;
+			sourceTree = "<group>";
+		};
+		EAF79ED22BFBE6B400DB3F26 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EAF79ED52BFBE81000DB3F26 /* IOBluetooth.framework */,
+				EAF79ED32BFBE6B400DB3F26 /* CoreBluetooth.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		EA079E702BC442A000C2C9C4 /* SitStandDeskController */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EA079E802BC442A300C2C9C4 /* Build configuration list for PBXNativeTarget "SitStandDeskController" */;
+			buildPhases = (
+				EA079E6D2BC442A000C2C9C4 /* Sources */,
+				EA079E6E2BC442A000C2C9C4 /* Frameworks */,
+				EA079E6F2BC442A000C2C9C4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SitStandDeskController;
+			productName = SitStandDeskController;
+			productReference = EA079E712BC442A000C2C9C4 /* SitStandDeskController.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		EA079E692BC442A000C2C9C4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1420;
+				LastUpgradeCheck = 1420;
+				TargetAttributes = {
+					EA079E702BC442A000C2C9C4 = {
+						CreatedOnToolsVersion = 14.2;
+					};
+				};
+			};
+			buildConfigurationList = EA079E6C2BC442A000C2C9C4 /* Build configuration list for PBXProject "SitStandDeskController" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = EA079E682BC442A000C2C9C4;
+			productRefGroup = EA079E722BC442A000C2C9C4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				EA079E702BC442A000C2C9C4 /* SitStandDeskController */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EA079E6F2BC442A000C2C9C4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA079E792BC442A300C2C9C4 /* Assets.xcassets in Resources */,
+				EA079E7C2BC442A300C2C9C4 /* Main.storyboard in Resources */,
+				EA079E842BC445DA00C2C9C4 /* Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		EA079E6D2BC442A000C2C9C4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA079E862BC487E200C2C9C4 /* PopMenuViewController.swift in Sources */,
+				EA079E772BC442A000C2C9C4 /* ViewController.swift in Sources */,
+				EAF79ED82BFBE82C00DB3F26 /* IOBluetooth.swift in Sources */,
+				EA079E882BC497BA00C2C9C4 /* BluetoothManager.swift in Sources */,
+				EA8A2B102C13AA0B00DAA472 /* SendingData.swift in Sources */,
+				EA079E752BC442A000C2C9C4 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		EA079E7A2BC442A300C2C9C4 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				EA079E7B2BC442A300C2C9C4 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		EA079E7E2BC442A300C2C9C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		EA079E7F2BC442A300C2C9C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.7;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		EA079E812BC442A300C2C9C4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SitStandDeskController/SitStandDeskController.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HHF4895753;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Always Description";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Usage Description";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Donghan-Hu.SitStandDeskController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		EA079E822BC442A300C2C9C4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = SitStandDeskController/SitStandDeskController.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = HHF4895753;
+				ENABLE_HARDENED_RUNTIME = NO;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "Always Description";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "Usage Description";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				INFOPLIST_KEY_NSMainStoryboardFile = Main;
+				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "Donghan-Hu.SitStandDeskController";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		EA079E6C2BC442A000C2C9C4 /* Build configuration list for PBXProject "SitStandDeskController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA079E7E2BC442A300C2C9C4 /* Debug */,
+				EA079E7F2BC442A300C2C9C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		EA079E802BC442A300C2C9C4 /* Build configuration list for PBXNativeTarget "SitStandDeskController" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EA079E812BC442A300C2C9C4 /* Debug */,
+				EA079E822BC442A300C2C9C4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = EA079E692BC442A000C2C9C4 /* Project object */;
+}
