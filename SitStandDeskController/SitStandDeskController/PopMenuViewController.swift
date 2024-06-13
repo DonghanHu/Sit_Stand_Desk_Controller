@@ -22,6 +22,13 @@ class PopMenuViewController: NSViewController {
     
     private var connectionLabel : NSTextField!
     
+    private var inputHeightLabel : NSTextField!
+    
+    private var changeHeightButton : NSButton!
+    
+    private var macAddress : NSTextField!
+    private var connectMacAddressButton : NSButton!
+    
     private var connectedFlag : Bool!
     
     private var detectConnectionTimer = Timer()
@@ -31,6 +38,11 @@ class PopMenuViewController: NSViewController {
     var bluetoothManagerObject: BluetoothManagerIOClass?
     
     // @NSApplicationDelegateAdaptor(AppDelegate.self) var delegate!
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
+        self.view.window?.makeFirstResponder(nil)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,19 +55,55 @@ class PopMenuViewController: NSViewController {
         bluetoothManagerObject?.listConnectedDevices()
         
         
+        connectMacAddressButton = NSButton(frame: NSRect(x: self.view.frame.origin.x + 20, y: self.view.frame.origin.y + 290, width: 160, height: 30))
+        connectMacAddressButton.target = self
+        connectMacAddressButton.title = "Connect Device"
+        connectMacAddressButton.bezelStyle = .rounded
+        connectMacAddressButton.isBordered = true
+        connectMacAddressButton.setButtonType(.momentaryPushIn)
+        // keyboard: 1
+        connectMacAddressButton.keyEquivalent = "4"
+        connectMacAddressButton.action = #selector(self.connectRPDeviceFunction)
+        self.view.addSubview(connectMacAddressButton)
+        
+        
+        
+        macAddress = NSTextField(frame: NSRect(x: self.view.frame.origin.x + 20, y: self.view.frame.origin.y + 240, width: 160, height: 50))
+        macAddress.focusRingType = .none
+        macAddress.isEditable = true
+        macAddress.textColor = .black
+        macAddress.stringValue = "raspberry pi bluetooth mac address"
+        macAddress.bezelStyle = .roundedBezel
+        macAddress.isBordered = true
+        macAddress.alignment = .center
+        macAddress.isHighlighted = false
+        self.view.addSubview(macAddress)
+        
+        
+        
+        changeHeightButton = NSButton(frame: NSRect(x: self.view.frame.origin.x + 20, y: self.view.frame.origin.y + 190, width: 160, height: 30))
+        changeHeightButton.target = self
+        changeHeightButton.title = "Go to this height"
+        changeHeightButton.bezelStyle = .rounded
+        changeHeightButton.isBordered = true
+        changeHeightButton.setButtonType(.momentaryPushIn)
+        // keyboard: 1
+        changeHeightButton.keyEquivalent = "3"
+        changeHeightButton.action = #selector(self.goTargetHeightFunction)
+        self.view.addSubview(changeHeightButton)
         
         
         connectedFlag = false
   
         // text field for bluetooth connection
-        connectionLabel = NSTextField(frame: NSRect(x: self.view.frame.origin.x + 20, y: self.view.frame.origin.y + 140, width: 160, height: 30))
-        connectionLabel.isEditable = false
-        connectionLabel.textColor = .black
-        connectionLabel.stringValue = String(connectedFlag)
-        connectionLabel.bezelStyle = .roundedBezel
-        connectionLabel.isBordered = true
-        connectionLabel.alignment = .center
-        self.view.addSubview(connectionLabel)
+        inputHeightLabel = NSTextField(frame: NSRect(x: self.view.frame.origin.x + 20, y: self.view.frame.origin.y + 140, width: 160, height: 30))
+        inputHeightLabel.isEditable = true
+        inputHeightLabel.textColor = .black
+        inputHeightLabel.stringValue = String(20.0)
+        inputHeightLabel.bezelStyle = .roundedBezel
+        inputHeightLabel.isBordered = true
+        inputHeightLabel.alignment = .center
+        self.view.addSubview(inputHeightLabel)
         
         
         // detectConnectionTimer = Timer.scheduledTimer(timeInterval: timeIntervalForDetect, target: self, selector: #selector(detectConnection), userInfo: nil, repeats: true)
@@ -84,7 +132,7 @@ class PopMenuViewController: NSViewController {
         goDownButton.action = #selector(self.goDownFunction)
         self.view.addSubview(goDownButton)
         
-        SeparatorLine.borderColor = .black
+//        SeparatorLine.borderColor = .black
         
         // Quit Button
         quitButton = NSButton(frame: NSRect(x: self.view.frame.origin.x + 20, y: self.view.frame.origin.y + 10, width: 160, height: 30))
@@ -99,6 +147,35 @@ class PopMenuViewController: NSViewController {
         
     }
     
+    // connect the Raspberry Pi with this specific mac address
+    @objc func connectRPDeviceFunction(){
+        
+    }
+    
+    // go up or down to a target height
+    
+    @objc func goTargetHeightFunction(){
+        let targetHeight = inputHeightLabel.stringValue
+        if let targetHeight_Double = Double(targetHeight) {
+            print("valid value")
+            
+            var bluetoothManagerData: BluetoothManagerData!
+            let deviceAddress = "b8:27:eb:aa:cb:f1"
+            bluetoothManagerData = BluetoothManagerData(deviceAddress: deviceAddress)
+            bluetoothManagerData.connectToDevice()
+            // Example of sending data
+            let message = "Go Height" + targetHeight
+            if let data = message.data(using: .utf8) {
+                bluetoothManagerData.sendData(data)
+            }
+            
+            
+        } else {
+            print("invlaid input value")
+        }
+        
+    }
+    
     @objc func goUpFunction(){
         
         //TODO
@@ -106,7 +183,7 @@ class PopMenuViewController: NSViewController {
         
         print("clicked go up!")
         var bluetoothManagerData: BluetoothManagerData!
-        let deviceAddress = "b8:27:eb:e3:89:bb"
+        let deviceAddress = "b8:27:eb:aa:cb:f1"
         bluetoothManagerData = BluetoothManagerData(deviceAddress: deviceAddress)
         bluetoothManagerData.connectToDevice()
         // Example of sending data
@@ -120,7 +197,7 @@ class PopMenuViewController: NSViewController {
     @objc func goDownFunction() {
         print("clicked go down!")
         var bluetoothManagerData: BluetoothManagerData!
-        let deviceAddress = "b8:27:eb:e3:89:bb"
+        let deviceAddress = "b8:27:eb:aa:cb:f1"
         bluetoothManagerData = BluetoothManagerData(deviceAddress: deviceAddress)
         bluetoothManagerData.connectToDevice()
         // Example of sending data
