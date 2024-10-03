@@ -164,7 +164,7 @@ class PopMenuViewController: NSViewController {
             bluetoothManagerData = BluetoothManagerData(deviceAddress: deviceAddress)
             bluetoothManagerData.connectToDevice()
             // Example of sending data
-            let message = "Go Height" + targetHeight
+            let message = "Do Custom " + targetHeight
             if let data = message.data(using: .utf8) {
                 bluetoothManagerData.sendData(data)
             }
@@ -191,21 +191,26 @@ class PopMenuViewController: NSViewController {
         if let data = message.data(using: .utf8) {
             bluetoothManagerData.sendData(data)
         }
+        
         // send a package for going up
     }
     
     @objc func goDownFunction() {
         print("clicked go down!")
+
+        // Initialize BluetoothManagerData
         var bluetoothManagerData: BluetoothManagerData!
-        let deviceAddress = "b8:27:eb:aa:cb:f1"
+        let deviceAddress = "b8:27:eb:aa:cb:f1"  // Replace with the correct device address
         bluetoothManagerData = BluetoothManagerData(deviceAddress: deviceAddress)
+
+        // Connect to the device
         bluetoothManagerData.connectToDevice()
-        // Example of sending data
-        let message = "Go Down"
+
+        // Send the "Go Down" command
+        let message = "Go Down"  // Add newline for clarity when printed on Raspberry Pi
         if let data = message.data(using: .utf8) {
             bluetoothManagerData.sendData(data)
         }
-        // send a package for going down
     }
     
     @objc func quitFunction() {
